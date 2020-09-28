@@ -1,0 +1,17 @@
+[user]
+	email = danielle@brook-roberge.ca
+	name = Danielle Brook-Roberge
+[push]
+	default = simple
+[alias]
+	co = checkout
+	stat = status
+	d = diff
+        ca = commit -a
+        cam = commit -am
+        branchco = checkout -b
+[commit]
+	gpgsign = true
+
+[pull]
+	rebase = false
