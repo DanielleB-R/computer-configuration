@@ -25,7 +25,6 @@
   :after go-mode
   :hook (go-mode . go-eldoc-setup))
 
-(use-package go-guru)
 (use-package go-rename)
 
 (use-package go-projectile

@@ -1,3 +1,12 @@
+;; Global settings
+(setq
+ gc-cons-threshold 20000000
+ create-lockfiles nil
+ user-mail-address "danielle@brook-roberge.ca")
+(setq-default indent-tabs-mode nil)
+
+(put 'overwrite-mode 'disabled t)
+
 (setq load-prefer-newer t)
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "init-lisp" user-emacs-directory))
@@ -12,6 +21,7 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(require 'use-package-ensure)
 (setq use-package-always-ensure t)
 (require 'use-package)
 (use-package auto-package-update
@@ -39,16 +49,6 @@
 (require 'init-projectile)
 (require 'init-spelling)
 
-
-;; Global settings
-(setq
- gc-cons-threshold 20000000
- create-lockfiles nil
- user-mail-address "danielle@brook-roberge.ca")
-(setq-default indent-tabs-mode nil)
-
-(put 'overwrite-mode 'disabled t)
-
 ;; Specific languages/major modes
 (require 'init-clojure)
 (require 'init-erlang)
@@ -67,31 +67,9 @@
 (use-package docker
   :bind ("C-c C-d" . docker))
 
-(use-package eyebrowse
-  :config (eyebrowse-mode t))
-
-(use-package nameframe
-  :after (eyebrowse)
-  :bind ("C-x f" . nameframe-switch-frame))
-
-(use-package nameframe-eyebrowse
-  :ensure nil
-  :config (nameframe-eyebrowse-mode t))
-
 (use-package org
   :bind ("C-c l" . org-store-link)
   :config (setq org-log-done t))
-
-(use-package yasnippet
-  :bind (:map yas-minor-mode-map
-              ("<tab>" . nil)
-              ("TAB" . nil)
-              ("C-<tab>" . yas-expand))
-  :init
-  (yas-global-mode 1)
-  :diminish yas-minor-mode)
-
-(use-package yasnippet-snippets)
 
 (use-package origami
   :bind (:map origami-mode-map
@@ -103,12 +81,6 @@
 (use-package sqlformat
   :hook (sql-mode . sqlformat-on-save-mode))
 
-(use-package rust-mode
-  :custom (rust-format-on-save t)
-  :bind (:map rust-mode-map ([remap dabbrev-completion] . company-complete)))
-
-(use-package flycheck-rust
-  :hook (flycheck-mode . flycheck-rust-setup))
 
 (use-package kubernetes
   :commands (kubernetes-overview))
@@ -119,14 +91,9 @@
               ("C-c C-f" . json-mode-beautify)))
 
 ;; packages with no further configuration
-(use-package esup)
 (use-package malyon)
 (use-package nov)
 (use-package threes)
-
-(use-package flycheck-elm
-  :after flycheck
-  :config (flycheck-elm-setup))
 
 ;; Local lisp packages
 

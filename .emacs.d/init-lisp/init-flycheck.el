@@ -16,6 +16,9 @@
   :after flycheck
   :config (flycheck-pos-tip-mode))
 
+(use-package flycheck-rust
+  :hook (flycheck-mode . flycheck-rust-setup))
+
 ;; This doesn't seem to work...
 ;; (use-package flycheck-color-mode-line
 ;;   :after flycheck

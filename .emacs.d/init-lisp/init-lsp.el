@@ -1,7 +1,7 @@
 ;;; init-lsp.el ---                                  -*- lexical-binding: t; -*-
 
 (use-package lsp-mode
-  :hook ((js2-mode rust-mode typescript-mode go-mode) . lsp-deferred)
+  :hook ((js2-mode rust-mode typescript-mode go-mode sh-mode clojure-mode) . lsp-deferred)
   :hook ((go-mode typescript-mode) . lsp-headerline-breadcrumb-mode)
   :diminish lsp-mode
   :custom

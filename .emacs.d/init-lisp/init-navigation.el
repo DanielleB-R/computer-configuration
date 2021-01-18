@@ -46,5 +46,17 @@
   ("C-`" . push-mark-no-activate)
   ("M-`" . jump-to-mark))
 
+(use-package eyebrowse
+  :config (eyebrowse-mode t))
+
+(use-package nameframe
+  :after (eyebrowse)
+  :bind ("C-x f" . nameframe-switch-frame))
+
+(use-package nameframe-eyebrowse
+  :ensure nil
+  :config (nameframe-eyebrowse-mode t))
+
+
 (provide 'init-navigation)
 ;;; init-navigation.el ends here

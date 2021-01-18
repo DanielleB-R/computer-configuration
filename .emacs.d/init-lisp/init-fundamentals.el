@@ -14,6 +14,9 @@
 (use-package desktop
   :config (desktop-save-mode t))
 
+(use-package ido
+  :config (ido-mode 1))
+
 (use-package eldoc
   :diminish)
 

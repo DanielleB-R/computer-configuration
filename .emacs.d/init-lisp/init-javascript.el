@@ -17,31 +17,10 @@
 (use-package rjsx-mode
   :mode "\\.jsx$")
 
-(use-package tern
-  :hook (js2-mode . tern-mode)
-  :config
-  (define-key tern-mode-keymap (kbd "M-.") nil)
-  (define-key tern-mode-keymap (kbd "M-,") nil))
-
-;; TODO look for a company replacement
-;; (use-package tern-auto-complete
-;;   :after (tern auto-complete-config)
-;;   :config (tern-ac-setup))
-
 (use-package xref-js2
   :config
   (define-key js2-mode-map (kbd "M-.") nil)
   (add-hook 'js2-mode-hook (lambda () (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
-
-(use-package js2-refactor
-  :hook (js2-mode . js2-refactor-mode)
-  :config (js2r-add-keybindings-with-prefix "C-c C-m")
-  :custom
-  (js2r-always-insert-parens-around-arrow-function-params t)
-  (js2r-prefered-quote-type 2))
-
-(use-package indium
-  :hook (js-mode . indium-interaction-mode))
 
 (use-package typescript-mode
   :mode "\\.tsx\\'"
@@ -55,6 +34,9 @@
 (use-package prettier-js
   :hook ((js2-mode . prettier-js-mode)
          (typescript-mode . prettier-js-mode)))
+
+(use-package add-node-modules-path
+  :hook ((js2-mode typescript-mode) . add-node-modules-path))
 
 (provide 'init-javascript)
 ;;; init-javascript.el ends here
