@@ -21,10 +21,6 @@
 (use-package go-dlv
   :after go-mode)
 
-(use-package go-eldoc
-  :after go-mode
-  :hook (go-mode . go-eldoc-setup))
-
 (use-package go-rename)
 
 (use-package go-projectile

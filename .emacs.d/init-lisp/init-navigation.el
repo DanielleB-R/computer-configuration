@@ -57,6 +57,11 @@
   :ensure nil
   :config (nameframe-eyebrowse-mode t))
 
+(use-package terminal-here
+  :custom (terminal-here-mac-terminal-command 'iterm2)
+  :bind
+  ("C-<f5>" . terminal-here-launch)
+  ("C-<f6>" . terminal-here-project-launch))
 
 (provide 'init-navigation)
 ;;; init-navigation.el ends here

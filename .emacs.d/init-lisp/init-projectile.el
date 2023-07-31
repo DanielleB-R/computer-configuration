@@ -2,7 +2,7 @@
 
 (use-package projectile
   :custom
-  (projectile-project-search-path '("~/dev/"))
+  (projectile-project-search-path '("~/dev/" "~/coding/"))
   (projectile-mode-line-prefix " P")
   :config
   (projectile-mode +1)

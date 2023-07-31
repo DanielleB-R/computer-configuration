@@ -14,6 +14,7 @@
 (setq read-process-output-max (* 1024 1024))
 
 (use-package lsp-ui
+  :after (lsp-mode flycheck)
   :hook (lsp-mode . lsp-ui-mode)
   :bind (:map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
@@ -27,6 +28,9 @@
 (use-package lsp-origami
   :after (lsp-mode origami)
   :hook (origami-mode . lsp-origami-mode))
+
+(use-package lsp-java
+  :config (add-hook 'java-mode-hook 'lsp))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

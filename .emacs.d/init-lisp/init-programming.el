@@ -7,10 +7,15 @@
   :custom (rust-format-on-save t)
   :bind (:map rust-mode-map ([remap dabbrev-completion] . company-complete)))
 
+(use-package slime
+  :config (setq inferior-lisp-program "sbcl"))
+
 ;; miscellaneous modes for programming, no configuration
 (use-package arduino-mode)
 (use-package docker-compose-mode)
 (use-package dockerfile-mode)
+(use-package enh-ruby-mode
+  :mode ("\\.rb\\'" . enh-ruby-mode))
 (use-package gitconfig-mode)
 (use-package gitignore-mode)
 (use-package glsl-mode)
@@ -20,12 +25,12 @@
 (use-package jade-mode)
 (use-package markdown-mode)
 (use-package nasm-mode)
+(use-package nim-mode)
 (use-package python)
 (use-package pip-requirements)
+(use-package racket-mode)
 (use-package toml-mode)
 (use-package yaml-mode)
-
-(use-package docker-tramp)
 
 (provide 'init-programming)
 ;;; init-programming.el ends here

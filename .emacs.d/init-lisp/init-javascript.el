@@ -32,8 +32,7 @@
   :hook (typescript-mode . tide-setup))
 
 (use-package prettier-js
-  :hook ((js2-mode . prettier-js-mode)
-         (typescript-mode . prettier-js-mode)))
+  :hook ((js2-mode typescript-mode) . prettier-js-mode))
 
 (use-package add-node-modules-path
   :hook ((js2-mode typescript-mode) . add-node-modules-path))

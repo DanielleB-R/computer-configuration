@@ -15,7 +15,7 @@
   (magit-stage-all-confirm nil)
   (magit-save-repository-buffers 'dontask)
   (magit-diff-refine-hunk t)
-  (magit-git-executable "/usr/bin/git"))
+  (magit-git-executable "/usr/local/bin/git"))
 
 (use-package magit-todos
   :hook (magit-mode . magit-todos-mode))

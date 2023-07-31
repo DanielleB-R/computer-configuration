@@ -18,9 +18,6 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 (require 'use-package)
@@ -57,10 +54,6 @@
 (require 'init-javascript)
 (require 'init-programming)
 (require 'init-shell)
-
-;; (use-package emojify
-;;   :hook (after-init . global-emojify-mode)
-;;   :custom (emojify-download-emoji t))
 
 (use-package dired-du)
 

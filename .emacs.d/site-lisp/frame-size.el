@@ -14,7 +14,9 @@
   "Double the width and height of the current frame."
   (interactive)
   (double-frame-width)
-  (double-frame-height))
+  (double-frame-height)
+  (split-window-below)
+  (split-window-right))
 
 (defun reset-standard-frame-size ()
   "Reset to the initial frame size."

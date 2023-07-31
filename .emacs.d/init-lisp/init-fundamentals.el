@@ -49,9 +49,6 @@
 (use-package ibuffer
   :bind ([remap list-buffers] . ibuffer))
 
-(use-package paren
-  :config (show-paren-mode t))
-
 (use-package server
   :config (server-start))
 

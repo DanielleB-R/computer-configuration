@@ -19,6 +19,8 @@
 (use-package flycheck-rust
   :hook (flycheck-mode . flycheck-rust-setup))
 
+(use-package flycheck-nim)
+
 ;; This doesn't seem to work...
 ;; (use-package flycheck-color-mode-line
 ;;   :after flycheck
