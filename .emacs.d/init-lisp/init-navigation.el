@@ -10,12 +10,6 @@
   :diminish anzu-mode
   :config (global-anzu-mode +1))
 
-(use-package avy
-  :bind (("C-'" . avy-goto-char)
-         ("C-\"" . avy-goto-char-2))
-  :custom
-  (avy-all-windows nil))
-
 (use-package goto-line-preview
   :bind (("M-g g" . goto-line-preview)
          ("M-g M-g" . goto-line-preview)))
@@ -36,9 +30,6 @@
 
 (use-package imenu-anywhere
   :bind ("C-M-m" . ido-imenu-anywhere))
-
-(use-package idomenu
-  :bind ("C-." . idomenu))
 
 (use-package mark-ring
   :ensure nil

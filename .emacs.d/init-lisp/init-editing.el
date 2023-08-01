@@ -11,23 +11,17 @@
          ("C-c w j" . copy-as-format-jira)
          ("C-c w l" . copy-as-format-gitlab)))
 
-(use-package duplicate-thing
-  :bind ("C-c u" . duplicate-thing))
-
 (use-package hungry-delete
   :diminish
   :custom (hungry-delete-join-reluctantly t)
   :hook (prog-mode . hungry-delete-mode))
 
 (use-package syntactic-close
-  :bind ("C-}" . syntactic-close)
+  :bind ("C-]" . syntactic-close)
   :custom (syntactic-close-unary-delimiter-chars '(?` ?\" ?')))
 
 (use-package move-text
   :config (move-text-default-bindings))
-
-(use-package discover
-  :config (global-discover-mode 1))
 
 (use-package smartparens-config
   :ensure smartparens

@@ -14,8 +14,6 @@
 (use-package arduino-mode)
 (use-package docker-compose-mode)
 (use-package dockerfile-mode)
-(use-package enh-ruby-mode
-  :mode ("\\.rb\\'" . enh-ruby-mode))
 (use-package gitconfig-mode)
 (use-package gitignore-mode)
 (use-package glsl-mode)

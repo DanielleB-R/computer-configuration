@@ -34,6 +34,7 @@
          ("C-z" . nil)
          ("M-Z" . zap-up-to-char)
          ("C-%" . replace-string)
+         ("C-c u" . duplicate-dwim)
          ("M-S-SPC" . just-one-space)
          (:map isearch-mode-map
                ([remap isearch-delete-char] . isearch-del-char)))

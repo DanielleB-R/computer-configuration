@@ -13,7 +13,5 @@
 (set-fontset-font
  t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend)
 
-(use-package reveal-in-osx-finder)
-
 (provide 'init-mac)
 ;;; init-mac.el ends here
